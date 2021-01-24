@@ -3,10 +3,9 @@ function TreeNode(value, left, right) {
     this.left = left || null;
     this.right = right || null;
     this._pipes = [];
-
-    // We'll start with these two
+    
     this.insert = function (node) {
-        // insert node
+        // insert node into the tree (which is represented by just one root node)
     };
 
     this.find = function (value) {
