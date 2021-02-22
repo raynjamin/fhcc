@@ -3,4 +3,15 @@ const entries = parse('./data.csv');
 const TreeNode = require('./treenode');
 const { print } = require('./printer');
 
-print(TreeNode.createFromEntries(entries));
+var tree = TreeNode.createFromEntries(entries);
+print(tree);
+
+console.log(tree.allNodes());
+
+tree.deleteNode(6);
+
+print(tree);
+
+
+tree.deleteNode(17);
+print(tree);
