@@ -60,7 +60,6 @@ var keywords = map[string]TokenType{
 
 // Allows us to lex identifiers and *keywords*.
 func LookupIdent(ident string) TokenType {
-	// WITS::
 	if tok, ok := keywords[ident]; ok {
 		return tok
 	}
