@@ -221,7 +221,7 @@ func TestParsingInfixExpressions(t *testing.T) {
 		}
 
 		if !testInfixExpression(t, stmt.Expression, tt.leftValue, tt.operator, tt.rightValue) {
-			returnn
+			return
 		}
 	}
 }
