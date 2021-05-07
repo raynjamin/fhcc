@@ -3,27 +3,20 @@ package main
 import "fmt"
 
 func main() {
-	sum := 0
-	i := 0
-	for {
-		i++
-		val := fibonacci(i)
-		if val >= 4000000 {
-			break
-		} else if val%2 == 0 {
-			sum += val
-		}
-	}
+	dividend := 600851475143
+	divisor := 2
 
-	fmt.Printf("SUM IS THIS THING: %d\n", sum)
+	largestPrime := largestPrime(dividend, divisor)
+
+	fmt.Printf("LARGEST PRIME FACTOR OF %d IS: %d\n", dividend, largestPrime)
 }
 
-func fibonacci(n int) int {
-	if n == 1 {
-		return 1
-	} else if n == 2 {
-		return 2
+func largestPrime(dividend int, divisor int) int {
+	if dividend == divisor {
+		return dividend
+	} else if dividend%divisor == 0 {
+		return largestPrime(dividend/divisor, divisor)
 	} else {
-		return fibonacci(n-1) + fibonacci(n-2)
+		return largestPrime(dividend, divisor + 1)
 	}
 }
